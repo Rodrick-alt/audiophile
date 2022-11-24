@@ -1,0 +1,53 @@
+/* BASIC ****************************************************** */
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    min-height: 100% !important;
+    height: 100%;
+    font-size: 16px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+body,
+main,
+#root,
+#page-wrapper {
+    height: 100%;
+    font-family: 'Manrope', sans-serif;
+    color: hsl(260, 8%, 14%);
+}
+#page-wrapper {
+    height: auto;
+}
+/* * {
+  outline: 1px solid #f00 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+} */
+
+/* No hover effects on touch ***********************************/
+@media (hover: hover) and (pointer: fine) {
+}
+
+/* BASICS ****************************************************** */
+.App{
+    margin-top: 7rem;
+}
+
+
+/* MEDIA QUERIES ****************************************************** */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 912px) {}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

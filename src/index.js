@@ -1,17 +1,48 @@
 import React from 'react';
+import { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './Styles/Index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import NoPage from './Pages/NoPage';
+import Layout from './Components/Layout';
+import HeadPhones from './Pages/HeadPhones';
+import Speakers from './Pages/Speakers';
+import EarPhones from './Pages/EarPhones';
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+
+function Index() {
+
+  // Scroll to top on route change
+  const ScrollToTop = (props) => {
+    const { pathname } = useLocation();
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
+  }
+
+  return (
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <ScrollToTop />
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<App />} />
+          <Route path="home" element={<App />} />
+          <Route path="headphones" element={<HeadPhones />} />
+          <Route path="speakers" element={<Speakers />} />
+          <Route path="earphones" element={<EarPhones />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Index />
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

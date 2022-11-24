@@ -1,0 +1,1 @@
+*,*:before,*:after{box-sizing:inherit}html{box-sizing:border-box;scroll-behavior:smooth;min-height:100% !important;height:100%;font-size:16px;overflow-x:hidden;overflow-y:auto}body,main,#root,#page-wrapper{height:100%;font-family:"Manrope",sans-serif;color:#232127}#page-wrapper{height:auto}.App{margin-top:7rem}
