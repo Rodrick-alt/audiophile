@@ -1,8 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import '../Styles/Navbar.css';
-import Cart from './Cart';
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [menuClass, setMenuClass] = useState('menuOff menuNav');

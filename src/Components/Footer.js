@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Styles/Footer.css';
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -8,10 +8,10 @@ function Footer() {
       <hr />
 
       <div className='mainContent'>
-
         <div>
-          <img className='logo' src={require('../Assets/shared/desktop/logo.svg').default} alt='logo' />
-
+          <Link to="/home">
+            <img className='logo' src={require('../Assets/shared/desktop/logo.svg').default} alt='logo' />
+          </Link>
           <ul className='navLinks'>
             <li>
               <Link to="/home">HOME</Link>
@@ -56,10 +56,7 @@ function Footer() {
               </a>
             </li>
           </ul>
-
         </div>
-
-
 
       </div>
     </div>

@@ -24,20 +24,120 @@ main,
 #page-wrapper {
     height: auto;
 }
-/* * {
-  outline: 1px solid #f00 !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-} */
+
+// * {
+//     outline: 1px solid #f00 !important;
+//     opacity: 1 !important;
+//     visibility: visible !important;
+// }
+
 
 /* No hover effects on touch ***********************************/
 @media (hover: hover) and (pointer: fine) {
 }
 
+
 /* BASICS ****************************************************** */
 .App{
     margin-top: 7rem;
+    section{
+        margin-bottom: 7rem;
+    }
 }
+
+.Hero{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-transform: uppercase;
+    color: white;
+    width: 100%;
+    height: auto;
+    gap: 2rem;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 7rem 7rem;
+    background: #191919 url('../Assets/home/desktop/image-hero.jpg') no-repeat top;
+    background-size: contain;
+}
+.Hero{
+    *{
+        max-width: 360px;
+    }
+    span{
+        color: hsl(0, 0%, 50%);
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 19px;
+        letter-spacing: 10px;
+    }
+    h1{
+        font-weight: 700;
+        font-size: 3rem;
+        line-height: 58px;
+        letter-spacing: 2px;
+    }
+    p{
+        color: hsl(0, 0%, 50%);
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 25px;
+    }
+    button{
+        color: white;
+        font-weight: 700;
+        font-size: .9rem;
+        line-height: 18px;
+        letter-spacing: 1px;
+        width: 160px;
+        height: 50px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background: #D87D4A;
+    }
+}
+
+.Products{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    p{
+        font-size: .8rem;
+        font-weight: 600;
+        color: hsl(0, 0%, 50%);
+        :first-child{
+        padding-left: 10px;
+        }
+    }
+    .special{
+        font-size: 1rem;
+        color: black;
+    }
+    a{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        max-width: 350px;
+        width: 100%;
+        height: auto;
+        gap: 1.5rem;
+        padding: 0 0 1.5rem 0;
+        border-radius: 5px;
+        // background-color: lightseagreen;
+        background-image: url('../Assets/cart/Mask.png');
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+
 
 
 /* MEDIA QUERIES ****************************************************** */
