@@ -21,8 +21,8 @@ main,
     font-family: 'Manrope', sans-serif;
     color: hsl(260, 8%, 14%);
 }
-#page-wrapper {
-    height: auto;
+*{
+    font-family: 'Manrope', sans-serif;
 }
 
 // * {
@@ -41,23 +41,49 @@ main,
 .App{
     margin-top: 7rem;
     section{
-        margin-bottom: 7rem;
+        margin-bottom: 10rem;
     }
 }
+
+h1,h2,h3,h4{
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 58px;
+    letter-spacing: 2px;
+}
+p{
+    color: hsl(0, 0%, 50%);
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 25px;
+}
+button{
+    color: white;
+    font-weight: 700;
+    font-size: .9rem;
+    line-height: 18px;
+    letter-spacing: 1px;
+    width: 160px;
+    height: 50px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: #D87D4A;
+}
+
 
 .Hero{
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: flex-start;
-    text-transform: uppercase;
     color: white;
     width: 100%;
     height: auto;
     gap: 2rem;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    padding: 7rem 7rem;
+    padding: 5rem 7rem;
     background: #191919 url('../Assets/home/desktop/image-hero.jpg') no-repeat top;
     background-size: contain;
 }
@@ -72,32 +98,9 @@ main,
         line-height: 19px;
         letter-spacing: 10px;
     }
-    h1{
-        font-weight: 700;
-        font-size: 3rem;
-        line-height: 58px;
-        letter-spacing: 2px;
-    }
-    p{
-        color: hsl(0, 0%, 50%);
-        font-weight: 500;
-        font-size: 1rem;
-        line-height: 25px;
-    }
-    button{
-        color: white;
-        font-weight: 700;
-        font-size: .9rem;
-        line-height: 18px;
-        letter-spacing: 1px;
-        width: 160px;
-        height: 50px;
-        cursor: pointer;
-        border: none;
-        outline: none;
-        background: #D87D4A;
-    }
 }
+
+
 
 .Products{
     display: flex;
@@ -106,16 +109,26 @@ main,
     align-items: center;
     gap: 2rem;
     width: 100%;
+    .Products-img{
+        filter: drop-shadow(0px 28px 26px #222);
+    }
     p{
-        font-size: .8rem;
-        font-weight: 600;
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 18px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
         color: hsl(0, 0%, 50%);
         :first-child{
         padding-left: 10px;
         }
     }
     .special{
-        font-size: 1rem;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 25px;
+        letter-spacing: 1.28571px;
+        text-transform: uppercase;
         color: black;
     }
     a{
@@ -125,20 +138,123 @@ main,
         align-items: center;
         max-width: 350px;
         width: 100%;
-        height: auto;
-        gap: 1.5rem;
+        gap: 1rem;
         padding: 0 0 1.5rem 0;
         border-radius: 5px;
-        // background-color: lightseagreen;
         background-image: url('../Assets/cart/Mask.png');
         background-position: bottom;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: 100% 80%;
     }
 }
 
 
 
+
+.Products-2{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 7rem;
+    .speaker{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+        align-items: center;
+        color: white;
+        width: 100%;
+        height: 560px;
+        padding: 4rem 4rem;
+        border-radius: 5px;
+        background-color: #D87D4A;
+        background-image: url('../Assets/home/desktop/image-speaker-zx9.png'), url('../Assets/home/desktop/pattern-circles.svg');
+        background-position: 20% 84px, -225px 0px;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 410.23px 493px, cover;
+        div{
+            max-width: 355px;
+            *{
+                margin-bottom: 1rem;
+            }
+        }
+        p{
+            color: hsl(0, 0%, 90%);
+        }
+        button{
+            color: white;
+            background-color: #191919;
+        }
+    }
+}
+.Products-2{
+    .speaker-2{
+        width: 100%;
+        text-align: left;
+        padding: 4rem 2rem;
+        border-radius: 5px;
+        background-image: url('../Assets/home/desktop/image-speaker-zx7.jpg');
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+        *{
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.Products-2{
+    .earphone{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        width: 100%;
+        img, div{
+            flex: 0 1 48%;
+        }
+        img,div{
+            border-radius: 5px;
+        }
+        div{
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 2rem;
+            height: 320px;
+            padding: 0 0 0 4rem ;
+            background-color: #F1F1F1;
+        }
+    }
+}
+
+.testimony{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 7rem;
+    img, div{
+        flex: 0 1 48%;
+    }
+    img{
+        border-radius: 5px;
+    }
+    div{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2rem;
+        span{
+            color:#D87D4A;
+        }
+    }
+}
 
 /* MEDIA QUERIES ****************************************************** */
 /* Extra small devices (phones, 600px and down) */
