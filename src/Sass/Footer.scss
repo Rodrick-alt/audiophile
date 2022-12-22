@@ -34,7 +34,7 @@
       color: hsl(0, 0%, 50%);
       line-height: 25px;
     }
-    .special{
+    .div__p--special{
       font-weight: 600;
       color: hsl(0, 0%, 60%);
     }
@@ -45,7 +45,6 @@
     .socialIcons{
       flex-flow: row nowrap;
     }
-
 
     div{
       display: flex;
@@ -75,6 +74,10 @@
   .mainContent{
     align-items: center;
     justify-content: center;
+    .descritpion{
+      width: auto;
+      min-width: initial;
+    }
     p{
       text-align: center;
     }

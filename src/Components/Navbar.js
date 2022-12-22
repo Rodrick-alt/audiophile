@@ -1,76 +1,96 @@
 import React from 'react';
-import { useState } from 'react';
-import '../Styles/Navbar.css';
 import { Link } from "react-router-dom";
+import { useState, useContext } from 'react';
+import '../Styles/Navbar.css';
+import CartActive from './CartActive';
 
-function Navbar() {
-  const [menuClass, setMenuClass] = useState('menuOff menuNav');
-  const [BGBoxClass, setBGBoxClass] = useState('menuOff BGBox');
+function Navbar(buttonState = 'cartActive--off cartActive') {
+  // Menu Button
+  const [menuClass, setMenuClass] = useState('navMenu--Off navMenu');
+  const [navContainerClass, setnavContainerClass] = useState('navContainer--Off navContainer');
+  const htmlElement = document.getElementsByTagName('html')[0];
 
   function menuBtn() {
-    if (menuClass === 'menuNav') {
-      setBGBoxClass(old => 'menuOff BGBox');
-      setMenuClass(old => 'menuOff menuNav');
+    if (menuClass === 'navMenu--Off navMenu') {
+      setMenuClass(old => 'navMenu');
+      setnavContainerClass(old => 'navContainer');
+      htmlElement.style.overflowY = 'hidden';
     } else {
-      setBGBoxClass(old => 'BGBox');
-      setMenuClass(old => 'menuNav');
+      setMenuClass(old => 'navMenu--Off navMenu');
+      setnavContainerClass(old => 'navContainer--Off navContainer');
+      htmlElement.style.overflowY = 'auto';
     }
   }
 
+  // // Cart Button 
+  // const [cartActiveClass, setcartActiveClass] = useState(buttonState);
+
+  // function cartBtn() {
+  //   if (cartActiveClass === 'cartActive--off cartActive') {
+  //     setcartActiveClass(old => {
+  //       return 'cartActive'
+  //     });
+  //     htmlElement.style.overflowY = 'hidden';
+  //   } else {
+  //     setcartActiveClass(old => {
+  //       return 'cartActive--off cartActive'
+  //     });
+  //     htmlElement.style.overflowY = 'auto';
+  //   }
+  // }
+
   function Menu() {
     return (
-      <nav className={menuClass}>
-        <ul>
-          <li>
-            <Link to="/headphones" onClick={() => menuBtn()}>
-              <img src={require('../Assets/cart/image-xx99-mark-one-headphones-NoBG.png')} alt='HeadPhones' />
-              <p className='special'>HEADPHONES</p>
-              <p>SHOP <img src={require('../Assets/shared/desktop/icon-arrow-right.svg').default} alt='' /></p>
-            </Link>
-          </li>
-          <li>
-            <Link to="/speakers" onClick={() => menuBtn()}>
-              <img src={require('../Assets/cart/image-zx9-speaker-NoBG.png')} alt='HeadPhones' />
-              <p className='special'>SPEAKERS</p>
-              <p>SHOP <img src={require('../Assets/shared/desktop/icon-arrow-right.svg').default} alt='' /></p>
-            </Link>
-          </li>
-          <li>
-            <Link to="/earphones" onClick={() => menuBtn()}>
-              <img src={require('../Assets/cart/image-yx1-earphones-NoBG.png')} alt='HeadPhones' />
-              <p className='special'>EARPHONES</p>
-              <p>SHOP <img src={require('../Assets/shared/desktop/icon-arrow-right.svg').default} alt='' /></p>
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      <section className={menuClass}>
+        <Link to="/headphones" onClick={() => menuBtn()}>
+          <img loading='lazy' width='121.49px' height='146px' className='navMenu__img' src={require('../Assets/cart/image-headphone-NoBG.png')} alt='HeadPhones' />
+          <p className='navMenu__p--special'>HEADPHONES</p>
+          <p>SHOP <img src={require('../Assets/shared/desktop/icon-arrow-right.svg').default} alt='' /></p>
+        </Link>
+
+        <Link to="/speakers" onClick={() => menuBtn()}>
+          <img loading='lazy' width='121.49px' height='146px' className='navMenu__img' src={require('../Assets/cart/image-speaker-NoBG.png')} alt='Speaker' />
+          <p className='navMenu__p--special'>SPEAKERS</p>
+          <p>SHOP <img src={require('../Assets/shared/desktop/icon-arrow-right.svg').default} alt='' /></p>
+        </Link>
+
+        <Link to="/earphones" onClick={() => menuBtn()}>
+          <img loading='lazy' width='121.49px' height='146px' className='navMenu__img navMenu__img--special' src={require('../Assets/cart/image-earphone-NoBG.png')} alt='EarPhones' />
+          <p className='navMenu__p--special'>EARPHONES</p>
+          <p>SHOP <img src={require('../Assets/shared/desktop/icon-arrow-right.svg').default} alt='' /></p>
+        </Link>
+      </section>
     )
   }
 
 
   return (
-    <div className='navContainer'>
+    <div className={navContainerClass}
+      onClick={(event) => {
+        if (menuClass === 'navMenu') {
+          event.stopPropagation();
+          menuBtn();
+        }
+      }}>
       <nav>
-        <ul className='menu-logo'>
+        <ul className='nav__logoContainer'>
           <li>
-            <button className='menuBtn'
-              onClick={(() => menuBtn())}>
+            <button onClick={(() => menuBtn())}>
               <img src={require('../Assets/shared/tablet/icon-hamburger.svg').default} alt='menu' />
             </button>
           </li>
           <li>
             <Link to="/home" onClick={() => {
-              setBGBoxClass(old => 'menuOff BGBox');
-              setMenuClass(old => 'menuOff menuNav');
+              setMenuClass(old => 'navMenu--Off navMenu');
             }}>
-              <img className='logo' src={require('../Assets/shared/desktop/logo.svg').default} alt='logo' />
+              <img src={require('../Assets/shared/desktop/logo.svg').default} alt='logo' />
             </Link>
           </li>
         </ul>
 
-        <ul className='navLinks'>
+        <ul className='nav__links'>
           <li>
-            <Link to="/home">HOME</Link>
+            <Link to="/checkout">HOME</Link>
           </li>
           <li>
             <Link to="/headphones">HEADPHONE</Link>
@@ -83,17 +103,17 @@ function Navbar() {
           </li>
         </ul>
 
-        <button className='cartBtn'>
+        <button className='nav__cartBtn'
+          onClick={() => {
+            // cartBtn();
+          }}>
           <img src={require('../Assets/shared/desktop/icon-cart.svg').default} alt='cart' />
         </button>
       </nav>
 
       <Menu />
 
-      <div className={BGBoxClass}
-        onClick={() => menuBtn()}>
-        LightBox
-      </div>
+
     </div>
   )
 }

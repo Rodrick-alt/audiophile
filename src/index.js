@@ -8,6 +8,8 @@ import Layout from './Components/Layout';
 import HeadPhones from './Pages/HeadPhones';
 import Speakers from './Pages/Speakers';
 import EarPhones from './Pages/EarPhones';
+import ProductDetail from './Pages/ProductDetail';
+import CheckOut from './Pages/CheckOut';
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 function Index() {
@@ -32,6 +34,8 @@ function Index() {
           <Route path="headphones" element={<HeadPhones />} />
           <Route path="speakers" element={<Speakers />} />
           <Route path="earphones" element={<EarPhones />} />
+          <Route path="product" element={<ProductDetail />} />
+          <Route path="checkout" element={<CheckOut />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

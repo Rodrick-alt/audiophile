@@ -1,0 +1,144 @@
+.hero-special{
+  display: block;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 44px;
+  text-align: center;
+  letter-spacing: 1.42857px;
+  background: none;
+  background-color: #121212;
+  border-radius: 0;
+  h1{
+    max-width: none !important;
+  }
+  *{
+    max-width: none;
+  }
+}
+
+.pageProduct{
+  padding: 0 7rem;
+}
+.pageProduct, .pageProduct div{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-content: center;
+  gap: 2rem 8rem;
+  h2{
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 1.42857px;
+  }
+  img{
+    max-width: 500px;
+    height: auto;
+    border-radius: 5px;
+  }
+  div{
+    gap: 1rem;
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
+  *{
+    max-width: 400px;
+  }
+span{
+    color: #D87D4A;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 19px;
+    letter-spacing: 10px;
+  }
+}
+.pageProduct--special{
+  flex-wrap: wrap-reverse !important;
+}
+
+
+
+
+/* MEDIA QUERIES ****************************************************** */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .pageProduct{
+    padding: 0 2rem !important;
+  }
+  .pageProduct, .pageProduct div{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem 5rem;
+    width: 100%;
+    padding: 0;
+    img{
+      max-width: 500px;
+      width: 100%;
+      height: auto;
+    }
+    div{
+      gap: 1rem;
+      flex-flow: column nowrap;
+      align-items: center;
+      text-align: center;
+      h2{
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 38px;
+        text-align: center;
+        letter-spacing: 1px;
+      }
+      span{
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        text-align: center;
+        letter-spacing: 10px;
+      }
+      p{
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 25px;
+      }
+    }
+  }
+}
+
+
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 912px) {
+  .pageProduct{
+    padding: 0 2rem;
+    margin-bottom: 5rem !important;
+  }
+
+
+  .pageProduct, .pageProduct div{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2rem 5rem;
+    padding: 2rem;
+    h2{
+      font-weight: 700;
+      font-size: 56px;
+      line-height: 58px;
+      text-align: center;
+      letter-spacing: 2px;
+      max-width: 450px;
+    }
+    img{
+      max-width: 100%;
+      width: 100%;
+    }
+    p,div{
+      max-width: 520px !important;
+    }
+  }
+}
