@@ -1,3 +1,15 @@
+/* No hover effects on touch ***********************************/
+@media (hover: hover) and (pointer: fine) {
+  a:hover{
+    p{
+      transition: .15s ease-out;
+      color: #D87D4A;
+    }
+  }
+}
+
+
+
 .catalogNav{
   display: flex;
   flex-flow: row wrap;

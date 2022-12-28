@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Footer from './Components/Footer.js';
 import CatalogNav from './Components/CatalogNav';
 
+
 function App() {
   const [imgFolder, setImagFolder] = useState('desktop');
 
@@ -13,6 +14,7 @@ function App() {
     } else if (window.innerWidth > '600' && window.innerWidth <= '912') {
       setImagFolder('tablet')
     }
+
   }, []);
 
 
@@ -24,7 +26,7 @@ function App() {
         <p>Experience natural, lifelike audio and exceptional build
           quality made for the passionate music enthusiast.
         </p>
-        <Link to="/product">
+        <Link to="/XX99MARKII">
           <button>SEE PRODUCT</button>
         </Link>
       </section>
@@ -38,7 +40,7 @@ function App() {
             <p>Upgrade to premium speakers that are phenomenally
               built to deliver truly remarkable sound.
             </p>
-            <Link to="/product">
+            <Link to="/ZX9">
               <button>SEE PRODUCT</button>
             </Link>
           </div>
@@ -46,7 +48,7 @@ function App() {
 
         <div className='products__speaker--2'>
           <h2>ZX7 SPEAKER</h2>
-          <Link to="/product">
+          <Link to="/ZX7">
             <button>SEE PRODUCT</button>
           </Link>
         </div>
@@ -55,7 +57,7 @@ function App() {
           <img loading='lazy' width='540px' height='320px' src={require("./Assets/home/" + imgFolder + "/image-earphones-yx1.jpg")} alt='EarPhones' />
           <div>
             <h2>YX1 EARPHONES</h2>
-            <Link to="/product">
+            <Link to="/YX1">
               <button>SEE PRODUCT</button>
             </Link>
           </div>

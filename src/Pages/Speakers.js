@@ -8,16 +8,6 @@ import CatalogNav from '../Components/CatalogNav';
 
 
 function Speakers() {
-  const [imgFolder, setImagFolder] = useState('desktop');
-
-  useEffect(() => {
-    if (window.innerWidth <= '600') {
-      setImagFolder('mobile');
-    } else if (window.innerWidth > '600' && window.innerWidth <= '912') {
-      setImagFolder('tablet')
-    }
-  }, []);
-
 
   return (
     <div className='App'>
@@ -26,7 +16,7 @@ function Speakers() {
       </section>
 
       <section className='pageProduct'>
-        <img width='500px' height='518.516px' src={require("../Assets/product-zx9-speaker/" + imgFolder + "/image-category-page-preview.jpg")} alt='Speakers' />
+        <img width='500px' height='518.516px' src={require("../Assets/product-zx9-speaker/desktop/image-category-page-preview.jpg")} alt='Speakers' />
         <div>
           <span>NEW PRODUCT</span>
           <h2>ZX9 SPEAKER</h2>
@@ -54,7 +44,7 @@ function Speakers() {
             <button>SEE PRODUCT</button>
           </Link>
         </div>
-        <img loading='lazy' width='500px' height='518.516px' src={require("../Assets/product-zx7-speaker/" + imgFolder + "/image-category-page-preview.jpg")} alt='Speakers' />
+        <img loading='lazy' width='500px' height='518.516px' src={require("../Assets/product-zx7-speaker/desktop/image-category-page-preview.jpg")} alt='Speakers' />
       </section>
 
       <CatalogNav />
@@ -72,7 +62,7 @@ function Speakers() {
             audio equipment.
           </p>
         </div>
-        <img loading='lazy' width='540px' height='588px' src={require("../Assets/shared/" + imgFolder + "/image-best-gear.jpg")} alt='' />
+        <img loading='lazy' width='540px' height='588px' src={require("../Assets/shared/desktop/image-best-gear.jpg")} alt='' />
 
       </section>
 

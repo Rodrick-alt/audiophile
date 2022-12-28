@@ -1,4 +1,40 @@
-.App-checkout{
+/* No hover effects on touch ***********************************/
+@media (hover: hover) and (pointer: fine) {
+  .items, .items--special{
+    input:hover{
+      cursor: pointer;
+      transition: ease-out;
+      outline: 1px solid #FBAF85;
+    }
+    input:focus{
+      transition: ease-out;
+      outline: 1px solid #FBAF85;
+    }
+    input:not(:placeholder-shown):not(:focus):invalid {
+      border: 2px solid hsla(0, 65%, 49%, 1);
+    }
+  }
+
+  .container--special{
+    label:hover{
+      div{
+        cursor: pointer;
+        transition: ease-out;
+        outline: 1px solid #FBAF85;
+      }
+    }
+    label:focus{
+      div{
+        transition: ease-out;
+        outline: 1px solid #FBAF85;
+      }
+    }
+  }
+
+}
+
+
+.AppCheckout{
   background: #F2F2F2;
 }
 
@@ -19,7 +55,7 @@ form{
 }
 
 
-.Checkout{
+.checkout{
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -45,7 +81,7 @@ form{
       color: #D87D4A;
     }
 
-    .item-container{
+    .itemContainer{
       display: flex;
       flex-flow: row wrap;
       justify-content: flex-start;
@@ -55,12 +91,12 @@ form{
         width: 47%;
         // here
       }
-      .item-special{
+      .item--special{
         width: 100% !important;
       }
     }
 
-    .container-special{
+    .container--special{
       flex-flow: column;
       justify-content: center;
       align-items: flex-end;
@@ -82,7 +118,7 @@ form{
         max-width: 300px;
         width: 100%;
       }
-      .items-special{
+      .items--special2{
         display: flex;
         flex-flow: row nowrap;
         align-items: flex-start;
@@ -95,7 +131,7 @@ form{
       }
     }
 
-  .container-special2{
+  .container--special2{
     width: 100%;
     align-items: flex-start;
     *{
@@ -113,7 +149,8 @@ form{
         letter-spacing: -0.214286px;
       }
       input{
-        color: hsla(0, 0%, 0%, .4);
+        color: black;
+        font-weight: 700;
         width: 100%;
         padding: 20px 20px;
         border-radius: 8px;
@@ -124,7 +161,11 @@ form{
   }
 }
 
-.cash-on{
+
+.cash--off{
+  display: none !important;
+}
+.cash--on{
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -141,13 +182,14 @@ form{
 }
 
 
-.Summary{
+.summary{
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: flex-start;
   max-width: 350px;
   min-width: 300px;
+  min-height: 200px;
   width: 100%;
   gap: 2rem;
   padding: 2rem 2rem;
@@ -161,14 +203,14 @@ form{
     text-transform: uppercase;
   }
 
-  .cart-container{
+  .cartContainer{
     display: flex;
     flex-flow: column nowrap;
     width: 100%;
     gap: 1.5rem;
   }
 
-  .cart-item{
+  .cartItem{
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -200,7 +242,18 @@ form{
   }
 }
 
-.Summary{
+.summary--off{
+  div,pre,button{
+    display: none;
+  }
+  justify-content: flex-start;
+  background-image: url('../Assets/cart/shopping-cart.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 30px;
+}
+
+.summary{
   pre{
     width: 100%;
   }
@@ -231,9 +284,9 @@ form{
   }
 }
 
-.Summary{
+.summary{
   pre{
-    .pre-special{
+    .pre--special{
       margin-top: 2rem;
       span{
         color: hsla(22, 65%, 57%, 1);
@@ -242,19 +295,11 @@ form{
   }
 }
 
-.Summary{
+.summary{
   button{
     width: 100%;
   }
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -271,7 +316,7 @@ form{
     align-items: flex-start;
     padding: 0 2rem;
   }
-  .Checkout{
+  .checkout{
     padding: 4rem 2rem;
     margin-bottom: 5rem !important;
     .container{
@@ -281,7 +326,66 @@ form{
     }
   }
 
-  .Summary{
+  .summary{
     max-width: 536px;
   }
+}
+
+
+
+
+
+
+
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 912px) {
+  .pageBackBtn {
+    margin-left: 4rem;
+    padding: initial;
+  }
+
+  form{
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 4rem;
+  }
+  .container--special label {
+    max-width: 100% !important;
+    width: 47% !important;
+}
+  .container--special2{
+    flex-flow: row nowrap !important;
+  }
+  .summary{
+    max-width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+@media only screen 
+and (min-width: 600px) 
+and (max-width: 1180px)
+and (orientation: landscape) {
+  .checkout{
+    padding: 4rem 2rem;
+    margin-bottom: 5rem !important;
+    .container{
+      .items{
+        width: 100%;
+      }
+    }
+  }
+  .container--special label {
+    max-width: 100% !important;
+    width: 100% !important;
+}
 }

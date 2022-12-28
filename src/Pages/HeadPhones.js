@@ -7,15 +7,6 @@ import Footer from '../Components/Footer.js';
 import CatalogNav from '../Components/CatalogNav';
 
 function HeadPhones() {
-  const [imgFolder, setImagFolder] = useState('desktop');
-
-  useEffect(() => {
-    if (window.innerWidth <= '600') {
-      setImagFolder('mobile');
-    } else if (window.innerWidth > '600' && window.innerWidth <= '912') {
-      setImagFolder('tablet')
-    }
-  }, []);
 
   return (
     <div className='App'>
@@ -24,7 +15,7 @@ function HeadPhones() {
       </section>
 
       <section className='pageProduct'>
-        <img width='500px' height='518.516px' src={require("../Assets/product-xx99-mark-two-headphones/" + imgFolder + "/image-category-page-preview.jpg")} alt='HeadPhones' />
+        <img width='500px' height='518.516px' src={require("../Assets/product-xx99-mark-two-headphones/desktop/image-product.jpg")} alt='HeadPhones' />
         <div>
           <span>NEW PRODUCT</span>
           <h2>XX99 MARK II HEADPHONES</h2>
@@ -51,11 +42,11 @@ function HeadPhones() {
             <button>SEE PRODUCT</button>
           </Link>
         </div>
-        <img loading='lazy' width='500px' height='518.516px' src={require("../Assets/product-xx99-mark-one-headphones/" + imgFolder + "/image-category-page-preview.jpg")} alt='HeadPhones' />
+        <img loading='lazy' width='500px' height='518.516px' src={require("../Assets/product-xx99-mark-one-headphones/desktop/image-product.jpg")} alt='HeadPhones' />
       </section>
 
       <section className='pageProduct'>
-        <img loading='lazy' width='500px' height='518.516px' src={require("../Assets/product-xx59-headphones/" + imgFolder + "/image-category-page-preview.jpg")} alt='HeadPhones' />
+        <img loading='lazy' width='500px' height='518.516px' src={require("../Assets/product-xx59-headphones/desktop/image-product.jpg")} alt='HeadPhones' />
         <div>
           <h2>XX59 HEADPHONES</h2>
           <p>Enjoy your audio almost anywhere and customize it
@@ -84,7 +75,7 @@ function HeadPhones() {
             audio equipment.
           </p>
         </div>
-        <img loading='lazy' width='540px' height='588px' src={require("../Assets/shared/" + imgFolder + "/image-best-gear.jpg")} alt='' />
+        <img loading='lazy' width='540px' height='588px' src={require("../Assets/shared/desktop/image-best-gear.jpg")} alt='' />
 
       </section>
 

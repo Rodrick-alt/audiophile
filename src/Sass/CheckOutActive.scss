@@ -10,12 +10,21 @@
   left: 0;
   z-index: 9;
   width: 100vw;
-  height: 100vh;
-  background: hsla(0, 0%, 0%, .4);
-  overflow-y: auto;
+  height: 100%;
+  overflow-y: scroll;
 }
 .checkOutActive--off{
   display: none;
+}
+
+.checkOutActiveBG{
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background: hsla(0, 0%, 0%, .4);
 }
 
 
@@ -32,6 +41,7 @@
   padding: 2rem;
   border-radius: 5px;
   background-color: white;
+  z-index: 10;
 }
 .orderCard{
   img{
@@ -77,6 +87,11 @@
 .cardInfo__container{
   display: flex;
   flex-flow: column nowrap;
+  max-height: 130px;
+  overflow-y: scroll;
+}
+.cardInfo__container::-webkit-scrollbar{
+  width: 0 !important 
 }
 .cardInfo__item{
   display: flex;

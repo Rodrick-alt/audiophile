@@ -1,18 +1,25 @@
 import React from 'react';
-import '../Styles/CategoryPage.css';
-import '../Styles/App.css';
-import '../Styles/ProductPage.css';
+import '../../Styles/CategoryPage.css';
+import '../../Styles/App.css';
+import '../../Styles/ProductPage.css';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import Footer from '../Components/Footer.js';
-import CatalogNav from '../Components/CatalogNav';
-import CartActive from '../Components/CartActive';
+import Footer from '../../Components/Footer.js';
+import CatalogNav from '../../Components/CatalogNav';
+import { useDispatch } from 'react-redux';
+import { cartArrAdd } from '../../cartSlice';
 
 
-function ProductDetail() {
+function XX99MARKII(props) {
+  // Redux
+  const dispatch = useDispatch()
+
   const navigate = useNavigate();
   const [imgFolder, setImagFolder] = useState('desktop');
+  const [amountNum, setamountNum] = useState(1);
 
+
+  // Change Image Folder based on Device Screen Width
   useEffect(() => {
     if (window.innerWidth <= '600') {
       setImagFolder('mobile');
@@ -21,17 +28,17 @@ function ProductDetail() {
     }
   }, []);
 
+
+
   return (
     <div className='AppProduct App'>
-
-      {/* <CartActive /> */}
 
       <button className='pageBackBtn' onClick={() => navigate(-1)}>
         Go Back
       </button>
 
       <section className='productDetails pageProduct'>
-        <img width='500px' height='518.516px' src={require("../Assets/product-xx99-mark-two-headphones/" + imgFolder + "/image-product.jpg")} alt='HeadPhones' />
+        <img width='500px' height='518.516px' src={require("../../Assets/product-xx99-mark-two-headphones/" + imgFolder + "/image-product.jpg")} alt='HeadPhones' />
         <div>
           <span>NEW PRODUCT</span>
           <h1>XX99 MARK II HEADPHONES</h1>
@@ -43,12 +50,45 @@ function ProductDetail() {
           <strong className='price'>$2,999</strong>
 
           <div className='cartBtn'>
+
             <div>
-              <button>-</button>
-              <p>1</p>
-              <button>+</button>
+              <button onClick={() => {
+                setamountNum(old => {
+                  let i = old;
+                  i -= 1;
+                  if (i <= 1) {
+                    return 1
+                  } else {
+                    return i
+                  }
+                })
+              }}>-</button>
+              <p>{amountNum}</p>
+              <button onClick={() => {
+                setamountNum(old => {
+                  let i = old;
+                  i += 1;
+                  if (i >= 5) {
+                    return 5
+                  } else {
+                    return i
+                  }
+                })
+              }}>+</button>
             </div>
-            <button>ADD TO CART</button>
+
+            <button
+              onClick={() => {
+                dispatch(cartArrAdd(([
+                  "XX99 MK II",
+                  2999,
+                  amountNum,
+                  "product-xx99-mark-two-headphones/desktop/image-product.jpg"
+                ])));
+              }}
+            >
+              ADD TO CART
+            </button>
           </div>
 
         </div>
@@ -91,11 +131,12 @@ function ProductDetail() {
 
       <section className='gallery'>
         <div className='div--special'>
-          <img loading='lazy' width='457.688px' heigh='287.969px' src={require("../Assets/product-xx99-mark-two-headphones/" + imgFolder + "/image-gallery-1.jpg")} alt='HeadPhones' />
-          <img loading='lazy' width='457.688px' heigh='287.969px' src={require("../Assets/product-xx99-mark-two-headphones/" + imgFolder + "/image-gallery-2.jpg")} alt='HeadPhones' />
+          <img loading='lazy' width='457.688px' heigh='287.969px' src={require("../../Assets/product-xx99-mark-two-headphones/" + imgFolder + "/image-gallery-1.jpg")} alt='HeadPhones' />
+          <img loading='lazy' width='457.688px' heigh='287.969px' src={require("../../Assets/product-xx99-mark-two-headphones/" + imgFolder + "/image-gallery-2.jpg")} alt='HeadPhones' />
         </div>
         <div>
-          <img loading='lazy' width='643.312px' heigh='599.734px' src={require("../Assets/product-xx99-mark-two-headphones/" + imgFolder + "/image-gallery-3.jpg")} alt='HeadPhones' />
+
+          <img loading='lazy' width='643.312px' heigh='599.734px' src={require("../../Assets/product-xx99-mark-two-headphones/" + imgFolder + "/image-gallery-3.jpg")} alt='HeadPhones' />
         </div>
 
       </section>
@@ -105,17 +146,17 @@ function ProductDetail() {
 
         <div className='div--container'>
           <div>
-            <img loading='lazy' width='350px' height='318px' src={require("../Assets/shared/" + imgFolder + "/image-xx99-mark-one-headphones.jpg")} alt='HeadPhones' />
+            <img loading='lazy' width='350px' height='318px' src={require("../../Assets/shared/" + imgFolder + "/image-xx99-mark-one-headphones.jpg")} alt='HeadPhones' />
             <h2>XX99 MARK I</h2>
             <button>SEE PRODUCT</button>
           </div>
           <div>
-            <img loading='lazy' width='350px' height='318px' src={require("../Assets/shared/" + imgFolder + "/image-xx59-headphones.jpg")} alt='HeadPhones' />
+            <img loading='lazy' width='350px' height='318px' src={require("../../Assets/shared/" + imgFolder + "/image-xx59-headphones.jpg")} alt='HeadPhones' />
             <h2>XX59</h2>
             <button>SEE PRODUCT</button>
           </div>
           <div>
-            <img loading='lazy' width='350px' height='318px' src={require("../Assets/shared/" + imgFolder + "/image-zx9-speaker.jpg")} alt='HeadPhones' />
+            <img loading='lazy' width='350px' height='318px' src={require("../../Assets/shared/" + imgFolder + "/image-zx9-speaker.jpg")} alt='HeadPhones' />
             <h2>ZX9 SPEAKER</h2>
             <button>SEE PRODUCT</button>
           </div>
@@ -137,7 +178,7 @@ function ProductDetail() {
             audio equipment.
           </p>
         </div>
-        <img loading='lazy' width='540px' height='588px' src={require("../Assets/shared/" + imgFolder + "/image-best-gear.jpg")} alt='' />
+        <img loading='lazy' width='540px' height='588px' src={require("../../Assets/shared/" + imgFolder + "/image-best-gear.jpg")} alt='' />
 
       </section>
 
@@ -146,4 +187,4 @@ function ProductDetail() {
   )
 }
 
-export default ProductDetail
+export default XX99MARKII

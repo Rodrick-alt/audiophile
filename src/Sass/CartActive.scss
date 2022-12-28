@@ -1,3 +1,23 @@
+/* No hover effects on touch ***********************************/
+@media (hover: hover) and (pointer: fine) {
+  .cartActive__card{
+    h2{
+      button:hover{
+        transition: ease-out;
+        text-decoration: underline;
+        background: initial;
+      }
+    }
+  }
+  .item__btn{
+    button:hover{
+      transition: ease-out;
+      color: #FBAF85 !important;
+    }
+  }
+}
+
+
 .cartActive{
   display: flex;
   flex-flow: column nowrap;
@@ -11,12 +31,24 @@
   height: 100%;
   padding: 2rem 8rem;
   padding-top: 8rem;
-  background: hsla(0, 0%, 0%, .4);
-  overflow-y: auto;
 }
 
 .cartActive--off{
-  display:none;
+  display:none ;
+}
+
+.cartActive--empty{
+  display: none !important;
+}
+
+.cartBG{
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background: hsla(0, 0%, 0%, .4);
 }
 
 
@@ -28,11 +60,17 @@
   gap: 1rem;
   max-width: 377px;
   min-width: 300px;
+  min-height: 200px;
   width: 100%;
   height: auto;
   padding: 2rem;
   border-radius: 5px;
   background-color: white;
+  z-index: 10;
+  background-image: url('../Assets/cart/shopping-cart.png');
+  background-repeat: no-repeat;
+  background-position: center 45%;
+  background-size: 30px;
 }
 
 
@@ -50,6 +88,7 @@
     line-height: 25px;
     letter-spacing: 1.28571px;
     text-transform: uppercase;
+    height: 27px;
     button{
       font-weight: 500;
       font-size: 15px;
@@ -78,11 +117,17 @@
   }
 }
 
-
+.card__itemContainer::-webkit-scrollbar{
+  width: 0 !important;
+}
 .card__itemContainer{
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
+  max-height: 200px;
+  gap: 0.5rem;
+  background-color: white;
+  overflow-y: scroll;
   .itemContainer__item{
     display: flex;
     flex-flow: row nowrap;
@@ -134,6 +179,13 @@
       letter-spacing: 1px;
     }
     button{
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      align-content: flex-start;
+      font-size: 1.2rem;
+      font-weight: bold;
       color: hsla(0, 0%, 0%, 0.25);
       width: 100%;
       height: 32px;

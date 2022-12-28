@@ -43,6 +43,31 @@ nav{
   background:none;
 }
 
+.nav__cartBtn{
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  span{
+    position: absolute;
+    top: 40%;
+    left: 55%;
+    transform: translate(-50%,-100%);
+    color:#D87D4A;
+    font-weight: 700;
+    font-size: .6rem;
+    z-index: 10;
+  }
+  img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9;
+  }
+}
+
 
 nav{
   position: relative;

@@ -7,16 +7,6 @@ import Footer from '../Components/Footer.js';
 import CatalogNav from '../Components/CatalogNav';
 
 function EarPhones() {
-  const [imgFolder, setImagFolder] = useState('desktop');
-
-  useEffect(() => {
-    if (window.innerWidth <= '600') {
-      setImagFolder('mobile');
-    } else if (window.innerWidth > '600' && window.innerWidth <= '912') {
-      setImagFolder('tablet')
-    }
-  }, []);
-
 
   return (
     <div className='App'>
@@ -25,7 +15,7 @@ function EarPhones() {
       </section>
 
       <section className='pageProduct'>
-        <img width='500px' height='518.516px' src={require("../Assets/product-yx1-earphones/" + imgFolder + "/image-category-page-preview.jpg")} alt='EarPhones' />
+        <img width='500px' height='518.516px' src={require("../Assets/product-yx1-earphones/desktop/image-category-page-preview.jpg")} alt='EarPhones' />
         <div>
           <span>NEW PRODUCT</span>
           <h2>YX1 WIRELESS EARPHONES</h2>
@@ -55,7 +45,7 @@ function EarPhones() {
             audio equipment.
           </p>
         </div>
-        <img loading='lazy' width='540px' height='588px' src={require("../Assets/shared/" + imgFolder + "/image-best-gear.jpg")} alt='' />
+        <img loading='lazy' width='540px' height='588px' src={require("../Assets/shared/desktop/image-best-gear.jpg")} alt='' />
 
       </section>
 
