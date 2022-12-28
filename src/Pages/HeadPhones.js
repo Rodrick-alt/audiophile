@@ -24,7 +24,7 @@ function HeadPhones() {
             experience by reproducing the balanced depth and
             precision of studio-quality sound.
           </p>
-          <Link to="/product">
+          <Link to="/XX99MARKII">
             <button>SEE PRODUCT</button>
           </Link>
         </div>
@@ -38,7 +38,7 @@ function HeadPhones() {
             audio reproduction for audiophiles, mixing engineers,
             and music aficionados alike in studios and on the go.
           </p>
-          <Link to="/product">
+          <Link to="/XX99MARKI">
             <button>SEE PRODUCT</button>
           </Link>
         </div>
@@ -54,7 +54,7 @@ function HeadPhones() {
             The stylish yet durable versatile wireless headset is
             a brilliant companion at home or on the move.
           </p>
-          <Link to="/product">
+          <Link to="/XX59">
             <button>SEE PRODUCT</button>
           </Link>
         </div>

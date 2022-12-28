@@ -220,7 +220,7 @@ function Navbar() {
         <ul className='nav__logoContainer'>
           <li>
             <button onClick={(() => menuBtn())}>
-              <img src={require('../Assets/shared/tablet/icon-hamburger.svg').default} alt='menu' />
+              <img width='16px' height='15px' src={require('../Assets/shared/tablet/icon-hamburger.svg').default} alt='menu' />
             </button>
           </li>
           <li>
@@ -230,7 +230,7 @@ function Navbar() {
               setnavContainerClass(old => 'navContainer--Off navContainer');
               htmlElement.style.overflowY = 'auto';
             }}>
-              <img src={require('../Assets/shared/desktop/logo.svg').default} alt='logo' />
+              <img width='143px' height='25px' src={require('../Assets/shared/desktop/logo.svg').default} alt='logo' />
             </Link>
           </li>
         </ul>
@@ -283,7 +283,7 @@ function Navbar() {
             handleCartbtn()
           }}>
           <span className={cartEmptyClass} >{cartNumber}</span>
-          <img src={require('../Assets/shared/desktop/icon-cart.svg').default} alt='cart' />
+          <img width='23px' height='20px' src={require('../Assets/shared/desktop/icon-cart.svg').default} alt='cart' />
         </button>
       </nav>
 

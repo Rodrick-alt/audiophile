@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 
 import App from './App';
 import NoPage from './Pages/NoPage';
+
 import Layout from './Components/Layout';
 import HeadPhones from './Pages/HeadPhones';
 import Speakers from './Pages/Speakers';

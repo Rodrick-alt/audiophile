@@ -26,7 +26,7 @@ function Speakers() {
             new possibilities for more pleasing and practical
             audio setups.
           </p>
-          <Link to="/product">
+          <Link to="/ZX9">
             <button>SEE PRODUCT</button>
           </Link>
         </div>
@@ -40,7 +40,7 @@ function Speakers() {
             components that represents the top of the line powered
             speakers for home or studio use.
           </p>
-          <Link to="/product">
+          <Link to="/ZX7">
             <button>SEE PRODUCT</button>
           </Link>
         </div>

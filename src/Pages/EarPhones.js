@@ -24,7 +24,7 @@ function EarPhones() {
             high-fidelity sound even in noisy environments with its active
             noise cancellation feature.
           </p>
-          <Link to="/product">
+          <Link to="/YX1">
             <button>SEE PRODUCT</button>
           </Link>
         </div>

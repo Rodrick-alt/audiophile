@@ -2,7 +2,7 @@ import React from 'react';
 import '../../Styles/CategoryPage.css';
 import '../../Styles/App.css';
 import '../../Styles/ProductPage.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Footer from '../../Components/Footer.js';
 import CatalogNav from '../../Components/CatalogNav';
@@ -148,17 +148,23 @@ function XX99MARKII(props) {
           <div>
             <img loading='lazy' width='350px' height='318px' src={require("../../Assets/shared/" + imgFolder + "/image-xx99-mark-one-headphones.jpg")} alt='HeadPhones' />
             <h2>XX99 MARK I</h2>
-            <button>SEE PRODUCT</button>
+            <Link to="/XX99MARKI">
+              <button>SEE PRODUCT</button>
+            </Link>
           </div>
           <div>
             <img loading='lazy' width='350px' height='318px' src={require("../../Assets/shared/" + imgFolder + "/image-xx59-headphones.jpg")} alt='HeadPhones' />
             <h2>XX59</h2>
-            <button>SEE PRODUCT</button>
+            <Link to="/XX59">
+              <button>SEE PRODUCT</button>
+            </Link>
           </div>
           <div>
-            <img loading='lazy' width='350px' height='318px' src={require("../../Assets/shared/" + imgFolder + "/image-zx9-speaker.jpg")} alt='HeadPhones' />
+            <img loading='lazy' width='350px' height='318px' src={require("../../Assets/shared/" + imgFolder + "/image-zx9-speaker.jpg")} alt='Speakers ' />
             <h2>ZX9 SPEAKER</h2>
-            <button>SEE PRODUCT</button>
+            <Link to="/ZX9">
+              <button>SEE PRODUCT</button>
+            </Link>
           </div>
         </div>
       </section>

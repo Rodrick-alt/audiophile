@@ -2,7 +2,7 @@ import React from 'react';
 import '../../Styles/CategoryPage.css';
 import '../../Styles/App.css';
 import '../../Styles/ProductPage.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Footer from '../../Components/Footer.js';
 import CatalogNav from '../../Components/CatalogNav';
@@ -131,12 +131,12 @@ function XX59(props) {
 
       <section className='gallery'>
         <div className='div--special'>
-          <img loading='lazy' width='457.688px' heigh='287.969px' src={require("../../Assets/product-xx99-mark-two-headphones/" + imgFolder + "/image-gallery-1.jpg")} alt='HeadPhones' />
-          <img loading='lazy' width='457.688px' heigh='287.969px' src={require("../../Assets/product-xx99-mark-two-headphones/" + imgFolder + "/image-gallery-2.jpg")} alt='HeadPhones' />
+          <img loading='lazy' width='457.688px' heigh='287.969px' src={require("../../Assets/product-xx59-headphones/" + imgFolder + "/image-gallery-1.jpg")} alt='HeadPhones' />
+          <img loading='lazy' width='457.688px' heigh='287.969px' src={require("../../Assets/product-xx59-headphones/" + imgFolder + "/image-gallery-2.jpg")} alt='HeadPhones' />
         </div>
         <div>
 
-          <img loading='lazy' width='643.312px' heigh='599.734px' src={require("../../Assets/product-xx99-mark-two-headphones/" + imgFolder + "/image-gallery-3.jpg")} alt='HeadPhones' />
+          <img loading='lazy' width='643.312px' heigh='599.734px' src={require("../../Assets/product-xx59-headphones/" + imgFolder + "/image-gallery-3.jpg")} alt='HeadPhones' />
         </div>
 
       </section>
@@ -146,19 +146,25 @@ function XX59(props) {
 
         <div className='div--container'>
           <div>
+            <img loading='lazy' width='350px' height='318px' src={require("../../Assets/shared/" + imgFolder + "/image-xx99-mark-two-headphones.jpg")} alt='HeadPhones' />
+            <h2>XX99 MARK II</h2>
+            <Link to="/XX99MARKII">
+              <button>SEE PRODUCT</button>
+            </Link>
+          </div>
+          <div>
             <img loading='lazy' width='350px' height='318px' src={require("../../Assets/shared/" + imgFolder + "/image-xx99-mark-one-headphones.jpg")} alt='HeadPhones' />
             <h2>XX99 MARK I</h2>
-            <button>SEE PRODUCT</button>
+            <Link to="/XX99MARKI">
+              <button>SEE PRODUCT</button>
+            </Link>
           </div>
           <div>
-            <img loading='lazy' width='350px' height='318px' src={require("../../Assets/shared/" + imgFolder + "/image-xx59-headphones.jpg")} alt='HeadPhones' />
-            <h2>XX59</h2>
-            <button>SEE PRODUCT</button>
-          </div>
-          <div>
-            <img loading='lazy' width='350px' height='318px' src={require("../../Assets/shared/" + imgFolder + "/image-zx9-speaker.jpg")} alt='HeadPhones' />
+            <img loading='lazy' width='350px' height='318px' src={require("../../Assets/shared/" + imgFolder + "/image-zx9-speaker.jpg")} alt='Speakers' />
             <h2>ZX9 SPEAKER</h2>
-            <button>SEE PRODUCT</button>
+            <Link to="/ZX9">
+              <button>SEE PRODUCT</button>
+            </Link>
           </div>
         </div>
       </section>
