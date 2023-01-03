@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import '../Styles/Navbar.css';
 import '../Styles/CartActive.css';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { cartArrRemoveAll } from '../cartSlice';
 import store from '../store';
 import { cartArrAdd } from '../cartSlice';
@@ -14,14 +14,22 @@ function Navbar() {
   // Redux
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [cartItemArr, setcartItemArr] = useState();
-  const [cartTotal, setcartTotal] = useState(0);
-  const [cartNumber, setcartNumber] = useState(0);
-
+  const storeArr = store.getState().cartData.cartArr;
+  // Cart Info
+  const [cartItemArr, setcartItemArr] = useState([...HandleCartArr(storeArr)]);
+  const [cartTotal, setcartTotal] = useState(handleTotal(storeArr));
+  const [cartNumber, setcartNumber] = useState(storeArr.length);
   // Cart Button
   const [cartEmptyClass, setcartEmtyClass] = useState('cartActive--empty');
 
+
   useEffect(() => {
+    if (storeArr.length !== 0) {
+      setcartEmtyClass('full');
+    } else {
+      setcartEmtyClass('cartActive--empty');
+    }
+
     store.subscribe(() => {
       let arr = store.getState().cartData.cartArr;
       setcartItemArr(old => [...HandleCartArr(arr)]);
@@ -34,6 +42,7 @@ function Navbar() {
       }
     });
   }, [])
+
 
   // Menu Button
   const [menuClass, setMenuClass] = useState('navMenu--Off navMenu');

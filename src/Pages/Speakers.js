@@ -2,7 +2,6 @@ import React from 'react';
 import '../Styles/CategoryPage.css';
 import '../Styles/App.css';
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import Footer from '../Components/Footer.js';
 import CatalogNav from '../Components/CatalogNav';
 
@@ -11,6 +10,11 @@ function Speakers() {
 
   return (
     <div className='App'>
+
+      <div className='hr-div'>
+        <hr />
+      </div>
+
       <section className='hero-special hero'>
         <h1>SPEAKERS</h1>
       </section>

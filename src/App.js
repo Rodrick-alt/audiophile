@@ -14,12 +14,16 @@ function App() {
     } else if (window.innerWidth > '600' && window.innerWidth <= '912') {
       setImagFolder('tablet')
     }
-
   }, []);
 
 
   return (
     <div className="App">
+
+      <div className='hr-div'>
+        <hr />
+      </div>
+
       <section className='hero'>
         <span>NEW PRODUCT</span>
         <h1>XX99 MARK II HEADPHONES</h1>

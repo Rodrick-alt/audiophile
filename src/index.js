@@ -1,15 +1,17 @@
 import React from 'react';
 import './Styles/Index.css';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+
 import store from './store';
 import { Provider } from 'react-redux';
+
+import Layout from './Components/Layout';
 
 import App from './App';
 import NoPage from './Pages/NoPage';
 
-import Layout from './Components/Layout';
 import HeadPhones from './Pages/HeadPhones';
 import Speakers from './Pages/Speakers';
 import EarPhones from './Pages/EarPhones';
@@ -22,9 +24,13 @@ import ZX9 from './Pages/Products/ZX9';
 import ZX7 from './Pages/Products/ZX7';
 import YX1 from './Pages/Products/YX1';
 
+// Redux-Persist
+import { persistStore } from 'redux-persist';
+import { PersistGate } from 'redux-persist/integration/react';
+let persistor = persistStore(store);
+
 
 function Index() {
-
   // Scroll to top on route change
   const ScrollToTop = (props) => {
     const { pathname } = useLocation();
@@ -64,7 +70,9 @@ function Index() {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-    <Index />
+    <PersistGate persistor={persistor}>
+      <Index />
+    </PersistGate>
   </Provider>
 );
 
