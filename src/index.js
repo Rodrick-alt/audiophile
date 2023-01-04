@@ -2,7 +2,7 @@ import React from 'react';
 import './Styles/Index.css';
 import ReactDOM from 'react-dom/client';
 import { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, HashRouter } from "react-router-dom";
 
 import store from './store';
 import { Provider } from 'react-redux';
@@ -42,7 +42,7 @@ function Index() {
   }
 
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter>
       <ScrollToTop />
       <Routes>
         <Route path='/' element={<Layout />}>
@@ -63,7 +63,7 @@ function Index() {
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

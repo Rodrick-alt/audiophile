@@ -2,7 +2,7 @@ import React from 'react';
 import '../Styles/CheckOutActive.css';
 import { useNavigate } from 'react-router-dom';
 import { cartArrRemoveAll } from '../cartSlice';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 
 function CheckOutActive(props) {
@@ -51,6 +51,8 @@ function CheckOutActive(props) {
       <div className='checkOutActiveBG' onClick={(event) => {
         event.stopPropagation();
         checkoutClass();
+        dispatch(cartArrRemoveAll());
+        navigate('/home');
         htmlElement.style.overflowY = 'auto';
       }}></div>
     </div>
