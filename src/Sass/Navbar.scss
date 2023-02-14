@@ -3,8 +3,12 @@
   a:hover{
     transition: .15s ease-out;
     color: #D87D4A;
+    .catalogNav__img{
+      transform: translateY(-5px) scale(1.005) translateZ(0);
+      transition: all 0.2s ease-in-out;
+    }
   }
-  .nav__cartBtn{
+  .nav__cartBtn:hover{
     color: initial !important;
     background-color: transparent !important;
   }

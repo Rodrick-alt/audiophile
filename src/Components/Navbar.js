@@ -64,19 +64,19 @@ function Navbar() {
     return (
       <section className={menuClass}>
         <Link to="/headphones" onClick={() => menuBtn()}>
-          <img width='121.49px' height='146px' className='navMenu__img' src={require('../Assets/cart/image-headphone-NoBG.png')} alt='HeadPhones' />
+          <img width='124px' height='160px' className='navMenu__img' src={require('../Assets/cart/image-headphone-NoBG.png')} alt='HeadPhones' />
           <p className='navMenu__p--special'>HEADPHONES</p>
           <p>SHOP <img src={require('../Assets/shared/desktop/icon-arrow-right.svg').default} alt='' /></p>
         </Link>
 
         <Link to="/speakers" onClick={() => menuBtn()}>
-          <img width='121.49px' height='146px' className='navMenu__img' src={require('../Assets/cart/image-speaker-NoBG.png')} alt='Speaker' />
+          <img width='123px' height='147px' className='navMenu__img' src={require('../Assets/cart/image-speaker-NoBG.png')} alt='Speaker' />
           <p className='navMenu__p--special'>SPEAKERS</p>
           <p>SHOP <img src={require('../Assets/shared/desktop/icon-arrow-right.svg').default} alt='' /></p>
         </Link>
 
         <Link to="/earphones" onClick={() => menuBtn()}>
-          <img width='121.49px' height='146px' className='navMenu__img navMenu__img--special' src={require('../Assets/cart/image-earphone-NoBG.png')} alt='EarPhones' />
+          <img width='125px' height='126px' className='navMenu__img navMenu__img--special' src={require('../Assets/cart/image-earphone-NoBG.png')} alt='EarPhones' />
           <p className='navMenu__p--special'>EARPHONES</p>
           <p>SHOP <img src={require('../Assets/shared/desktop/icon-arrow-right.svg').default} alt='' /></p>
         </Link>

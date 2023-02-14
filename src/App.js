@@ -1,21 +1,10 @@
 import './Styles/App.css';
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import Footer from './Components/Footer.js';
 import CatalogNav from './Components/CatalogNav';
 
 
 function App() {
-  const [imgFolder, setImagFolder] = useState('desktop');
-
-  useEffect(() => {
-    if (window.innerWidth <= '600') {
-      setImagFolder('mobile');
-    } else if (window.innerWidth > '600' && window.innerWidth <= '912') {
-      setImagFolder('tablet')
-    }
-  }, []);
-
 
   return (
     <div className="App">
@@ -39,6 +28,7 @@ function App() {
 
       <section className='products'>
         <div className='products__speaker'>
+          <img width='540px' height='320px' src={require("./Assets/home/desktop/image-speaker-zx9.png")} alt='Speaker' />
           <div>
             <h2>ZX9 SPEAKER</h2>
             <p>Upgrade to premium speakers that are phenomenally
@@ -58,7 +48,7 @@ function App() {
         </div>
 
         <div className='products__earphone'>
-          <img loading='lazy' width='540px' height='320px' src={require("./Assets/home/" + imgFolder + "/image-earphones-yx1.jpg")} alt='EarPhones' />
+          <img loading='lazy' width='540px' height='320px' src={require("./Assets/home/desktop/image-earphones-yx1.jpg")} alt='EarPhones' />
           <div>
             <h2>YX1 EARPHONES</h2>
             <Link to="/YX1">
@@ -82,7 +72,7 @@ function App() {
             audio equipment.
           </p>
         </div>
-        <img loading='lazy' width='540px' height='588px' src={require("./Assets/shared/" + imgFolder + "/image-best-gear.jpg")} alt='' />
+        <img loading='lazy' width='540px' height='588px' src={require("./Assets/shared/desktop/image-best-gear.jpg")} alt='' />
 
       </section>
 

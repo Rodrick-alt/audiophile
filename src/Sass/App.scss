@@ -4,6 +4,7 @@
 *:after {
     box-sizing: inherit;
 }
+
 html {
     box-sizing: border-box;
     min-height: 100% !important;
@@ -12,6 +13,7 @@ html {
     overflow-x: hidden;
     overflow-y: auto;
 }
+
 body,
 main,
 #root,
@@ -31,29 +33,33 @@ main,
 
 /* No hover effects on touch ***********************************/
 @media (hover: hover) and (pointer: fine) {
-    button:not(.pageBackBtn):hover{
+    button:not(.pageBackBtn):hover {
         transition: ease-out;
         background: #FBAF85;
     }
-    .pageBackBtn:hover{
+
+    .pageBackBtn:hover {
         transition: ease-out;
         color: hsla(22, 65%, 57%, 1) !important;
     }
-    .products__speaker{
-        a:hover{
-            button{
+
+    .products__speaker {
+        a:hover {
+            button {
                 transition: ease-out;
                 background: hsla(0, 0%, 30%, 1);
                 border-color: hsla(0, 0%, 30%, 1);
             }
         }
     }
-    .products__speaker--2, .products__earphone{
-        a:hover{
-            button{
+
+    .products__speaker--2,
+    .products__earphone {
+        a:hover {
+            button {
                 transition: ease-out;
                 color: white;
-                background:hsla(0, 0%, 0%, 1);
+                background: hsla(0, 0%, 0%, 1);
             }
         }
     }
@@ -61,34 +67,38 @@ main,
 
 
 /* BASICS ****************************************************** */
-.App{
+.App {
     margin-top: 5rem;
     background: #FAFAFA;
-    section{
+
+    section {
         margin-bottom: 10rem;
     }
 }
 
-img{
+img {
     max-width: 100%;
     height: auto;
 }
 
-h1,h2,h3,h4{
+h1,
+h2,
+h3,
+h4 {
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 50px;
     line-height: 58px;
     letter-spacing: 2px;
 }
 
-p{
+p {
     color: hsl(0, 0%, 50%);
     font-weight: 500;
     font-size: 1rem;
     line-height: 25px;
 }
 
-button{
+button {
     color: white;
     font-weight: 700;
     font-size: .9rem;
@@ -102,38 +112,46 @@ button{
     background: #D87D4A;
 }
 
-.hr-div{
+.hr-div {
     width: 100%;
-    height:auto;
+    height: auto;
     background: #191919;
-    hr{
+
+    hr {
         max-width: 1125px;
         width: 100%;
         margin: 0 auto;
-        border: 1px solid rgba(255, 255, 255,.2);
+        border: 1px solid hsla(0, 0%, 100%, .1);
     }
 }
 
 
-.hero{
+.hero {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
     color: white;
     width: 100%;
-    gap: 2rem;
+    gap: 1.29rem;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     padding: 5rem 7rem;
     background: #191919 url('../Assets/home/desktop/image-hero.jpg') no-repeat top;
-    background-size: contain;
+    background-size: 94%;
+    background-position: center 80%;
 }
-.hero{
-    *{
+
+.hero {
+    * {
         max-width: 360px;
     }
-    span{
+
+    p {
+        color: hsl(0, 0%, 75%);
+    }
+
+    span {
         color: hsl(0, 0%, 50%);
         font-weight: 400;
         font-size: 1rem;
@@ -145,52 +163,69 @@ button{
 
 
 
-.products{
+.products {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     gap: 2rem;
     padding: 0 7rem;
-    .products__speaker{
+
+    .products__speaker {
         display: flex;
         flex-flow: row wrap;
-        justify-content: flex-end;
+        justify-content: space-around;
         align-items: center;
+        gap: 2rem 3rem;
         color: white;
         width: 100%;
-        height: 560px;
+        height: 550px;
         padding: 4rem 4rem;
+        overflow: hidden;
         border-radius: 5px;
         background-color: #D87D4A;
-        background-image: url('../Assets/home/desktop/image-speaker-zx9.png'), url('../Assets/home/desktop/pattern-circles.svg');
-        background-position: 20% 84px, -225px 0px;
-        background-repeat: no-repeat, no-repeat;
-        background-size: 410.23px 493px, cover;
-        div{
-            max-width: 355px;
-            *{
+        background-image: url('../Assets/home/desktop/pattern-circles.svg');
+        background-position: -225px 0px;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        img {
+            position: relative;
+            top: -2.5rem;
+            width: 45%;
+            height: auto;
+        }
+
+        div {
+            max-width: 300px;
+
+            h2,
+            p {
                 margin-bottom: 1rem;
             }
+
+            p {
+                color: hsl(0, 0%, 90%);
+            }
         }
-        p{
-            color: hsl(0, 0%, 90%);
-        }
-        button{
+
+        button {
             color: white;
             background-color: #191919;
         }
     }
 }
-.products{
-    button{
+
+.products {
+    button {
         color: black;
         border: 1px solid black;
         background: transparent;
     }
 }
-.products{
-    .products__speaker--2{
+
+.products {
+    .products__speaker--2 {
         width: 100%;
         text-align: left;
         padding: 4rem 4rem;
@@ -199,77 +234,96 @@ button{
         background-position: bottom;
         background-repeat: no-repeat;
         background-size: cover;
-        *{
+
+        * {
             margin-bottom: 1rem;
         }
-        h2{
+
+        h2 {
             font-size: 2rem;
         }
     }
 }
-.products{
-    .products__earphone{
+
+.products {
+    .products__earphone {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
         align-items: center;
-        gap: 2rem;
         width: 100%;
-        max-height: 357px;
-        h2{
-            font-size: 2rem;
+        gap: 1rem 3rem;
+        height: 320px;
+
+        img,
+        div {
+            flex: 1;
+            height: 100%;
+            min-height: 220px
         }
-        img, div{
-            width: 48%;
-            height: 320px;
-        }
-        img,div{
+
+        img {
+            object-fit: cover;
             border-radius: 5px;
         }
-        div{
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        div {
             display: flex;
             flex-flow: column;
             justify-content: center;
             align-items: flex-start;
             gap: 2rem;
-            padding: 0 0 0 4rem ;
+            padding: 0 0 0 4rem;
+            border-radius: 5px;
             background-color: #F1F1F1;
         }
     }
 }
 
 
-.testimony{
+.testimony {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row wrap-reverse;
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
     padding: 0 7rem;
-    h2{
+
+    h2 {
         font-weight: 700;
         font-size: 40px;
         line-height: 44px;
         letter-spacing: 1.42857px;
     }
-    img, div{
-        flex: 0 1 48%;
-    }
-    img{
+
+    img,
+    div {
+        flex: auto 50%;
         border-radius: 5px;
     }
-    div{
+
+    div {
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
         align-items: flex-start;
         gap: 2rem;
         max-width: 450px;
-        span{
-            color:#D87D4A;
+
+        span {
+            color: #D87D4A;
         }
     }
 }
+
+
+
+
+
 
 
 
@@ -277,14 +331,19 @@ button{
 /* MEDIA QUERIES ****************************************************** */
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .hero, 
+
+    .hero,
     .catalogNav,
     .products,
-    .testimony{
-        padding-left:1.5rem;
-        padding-right:1.5rem;
+    .testimony {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
-    h1,h2,h3,h4{
+
+    h1,
+    h2,
+    h3,
+    h4 {
         font-size: 2rem;
         font-weight: 700;
         line-height: 40px;
@@ -294,48 +353,59 @@ button{
     }
 
 
-    .hero{
+    .hero {
         max-width: none;
         justify-content: center;
         align-items: center;
         text-align: center;
         gap: 1rem;
         background: #191919 url('../Assets/home/mobile/image-header.jpg') no-repeat top;
-        background-size: contain;
+        background-size: cover;
+        background-position: center 90%;
     }
 
 
-    .products{
+    .products {
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
         text-align: center;
         gap: 2rem;
-        .products__speaker{
+
+        .products__speaker {
             justify-content: center;
-            align-items: flex-end;
-            height: 560px;
-            padding: 4rem 1rem 2rem 1rem;
-            background-image: url('../Assets/home/mobile/image-speaker-zx9.png'), url('../Assets/home/desktop/pattern-circles.svg');
-            background-position: center 20%, center -120px;
-            background-size: 172.25px 207px, cover;
-            background-repeat: no-repeat, no-repeat;
-            h2{
+            align-items: center;
+            height: auto;
+            max-height: fit-content;
+            padding: 1rem 1rem 2rem 1rem;
+            background-image: url('../Assets/home/desktop/pattern-circles.svg');
+            background-position: center -120px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            overflow: visible;
+            img{
+                position: static;
+                width: 70%;
+                content: url('../Assets/home/mobile/image-speaker-zx9.png');
+            }
+
+            h2 {
                 padding: 0 1rem;
             }
         }
     }
 
 
-    .products{
-        .products__speaker--2{
+    .products {
+        .products__speaker--2 {
             text-align: left;
             padding: 4rem 2rem;
             background-image: url('../Assets/home/mobile/image-speaker-zx7.jpg');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            h2{
+
+            h2 {
                 font-size: 28px;
                 text-align: left;
             }
@@ -343,17 +413,26 @@ button{
     }
 
 
-    .products{
-        .products__earphone{
+    .products {
+        .products__earphone {
             align-items: center;
-            h2{
+            height: auto;
+
+            img,
+            div {
+                height: 220px;
+            }
+
+            img{
+                content: url('../Assets/home/mobile/image-earphones-yx1.jpg');
+            }
+
+            h2 {
                 font-size: 28px;
                 text-align: left;
             }
-            img, div{
-                flex: 0 1 100%;
-            }
-            div{
+
+            div {
                 justify-content: center;
                 align-items: flex-start;
                 gap: 1rem;
@@ -361,93 +440,104 @@ button{
             }
         }
     }
-    
 
 
-    .testimony{
-        flex-flow: row wrap-reverse;
+
+    .testimony {
         justify-content: center;
         align-items: center;
         text-align: center;
         gap: 2rem;
-        h2{
+
+        h2 {
             font-weight: 700;
             font-size: 28px;
             line-height: 38px;
             letter-spacing: 1px;
         }
-        img, div{
-            flex: 0 1 100%;
+
+        img{
+            content: url('../Assets/shared/mobile/image-best-gear.jpg');
         }
-        div{
+
+        div {
             align-items: center;
             gap: 2rem;
             max-width: 100%;
         }
     }
-    
+
 }
 
 
 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) and (max-width: 912px) {
-    .hero, 
+@media only screen and (min-width: 601px) and (max-width: 912px) {
+
+    .hero,
     .catalogNav,
     .products,
-    .testimony{
-        padding-left:2rem;
-        padding-right:2rem;
+    .testimony {
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 
 
-    .hero{
+    .hero {
         max-width: 100%;
         justify-content: center;
         align-items: center;
         text-align: center;
         background: #191919 url('../Assets/home/tablet/image-header.jpg') no-repeat top;
-        background-size: contain;
+        background-size: 100%;
+        background-position: center 80%;
     }
 
 
-    .catalogNav{
+    .catalogNav {
         flex-flow: row nowrap;
     }
 
 
-    .products{
+    .products {
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
         text-align: center;
         gap: 2rem;
-        .products__speaker{
+
+        .products__speaker {
             justify-content: center;
-            align-items: flex-end;
-            height: 600px;
-            padding: 6rem 1rem 2rem 1rem;
-            background-image: url('../Assets/home/tablet/image-speaker-zx9.png'), url('../Assets/home/desktop/pattern-circles.svg');
-            background-position: center 10%, center -150px;
-            background-size: 172.25px 207px, cover;
-            background-repeat: no-repeat, no-repeat;
-            h2{
+            align-items: center;
+            height: auto;
+            max-height: fit-content;
+            padding: 2rem 1rem 2rem 1rem;
+            background-image: url('../Assets/home/desktop/pattern-circles.svg');
+            background-position: -225px 0px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            img{
+                position: static;
+                content: url('../Assets/home/tablet/image-speaker-zx9.png');
+            }
+            h2 {
                 padding: 0 1rem;
             }
         }
     }
 
 
-    .products{
-        .products__speaker--2{
+    .products {
+        .products__speaker--2 {
             text-align: left;
             padding: 4rem 2rem;
             background-image: url('../Assets/home/tablet/image-speaker-zx7.jpg');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            h2{
+
+            h2 {
                 font-size: 28px;
                 text-align: left;
             }
@@ -455,19 +545,27 @@ button{
     }
 
 
-    .products{
-        .products__earphone{
+    .products {
+        .products__earphone {
             flex-flow: row nowrap;
             gap: 1rem;
-            img,div{
+
+            img,
+            div {
                 max-width: 50%;
                 height: 100% !important;
             }
-            h2{
+
+            img{
+                content: url('../Assets/home/tablet/image-earphones-yx1.jpg');
+            }
+
+            h2 {
                 font-size: 28px;
                 text-align: left;
             }
-            div{
+
+            div {
                 justify-content: center;
                 align-items: flex-start;
                 gap: 1rem;
@@ -475,24 +573,27 @@ button{
             }
         }
     }
-    
 
 
-    .testimony{
-        flex-flow: row wrap-reverse;
+
+    .testimony {
         justify-content: center;
         align-items: center;
         text-align: center;
         gap: 2rem;
-        img, div{
-            flex: 0 1 100%;
+
+        img,div{
+            flex: 1 1 50%;
         }
-        img{
+
+        img {
             height: 300px;
             object-fit: cover;
             object-position: center 40%;
+                content: url('../Assets/shared/tablet/image-best-gear.jpg');
         }
-        div{
+
+        div {
             align-items: center;
             gap: 2rem;
             max-width: 550px;
@@ -501,69 +602,59 @@ button{
 }
 
 
-
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px ) and (max-width: 1180px) {
-    .hero, 
+// Tablet Landscape
+@media only screen and (min-width: 992px) and (max-width: 1180px) {
+    .hero,
     .catalogNav,
     .products,
-    .testimony{
-        padding-left:2rem;
-        padding-right:2rem;
+    .testimony {
+        padding-left: 4rem !important;
+        padding-right: 4rem !important;
     }
-
 
     .hero{
-        max-width: 100%;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
         background: #191919 url('../Assets/home/tablet/image-header.jpg') no-repeat top;
         background-size: contain;
-        gap: 1rem;
-        h1{
-            font-weight: 700;
-            font-size: 56px;
-            line-height: 58px;
-            text-align: center;
-            letter-spacing: 2px;
-            max-width: 400px !important;
-        }
+        background-position: 33rem -2rem;
     }
 
-
-    .products{
+    .products {
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
         text-align: center;
         gap: 2rem;
-        .products__speaker{
+
+        .products__speaker {
             justify-content: center;
-            align-items: flex-end;
-            height: 600px;
-            padding: 6rem 1rem 2rem 1rem;
-            background-image: url('../Assets/home/tablet/image-speaker-zx9.png'), url('../Assets/home/desktop/pattern-circles.svg');
-            background-position: center 10%, center -150px;
-            background-size: 172.25px 207px, cover;
-            background-repeat: no-repeat, no-repeat;
-            h2{
+            align-items: center;
+            height: auto;
+            max-height: fit-content;
+            padding: 2rem 1rem 2rem 1rem;
+            background-image: url('../Assets/home/desktop/pattern-circles.svg');
+            background-position: -225px 0px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            img{
+                position: static;
+            }
+            h2 {
                 padding: 0 1rem;
             }
         }
     }
 
 
-    .products{
-        .products__speaker--2{
+    .products {
+        .products__speaker--2 {
             text-align: left;
             padding: 4rem 2rem;
             background-image: url('../Assets/home/tablet/image-speaker-zx7.jpg');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            h2{
+
+            h2 {
                 font-size: 28px;
                 text-align: left;
             }
@@ -571,69 +662,52 @@ button{
     }
 
 
-    .products{
-        .products__earphone{
+    .products {
+        .products__earphone {
             flex-flow: row nowrap;
             gap: 1rem;
-            img,div{
+
+            img,
+            div {
                 max-width: 50%;
-                height: 350px !important;
-                object-fit:cover;
+                height: 100% !important;
             }
-            h2{
+
+            h2 {
                 font-size: 28px;
                 text-align: left;
             }
-            div{
+
+            div {
                 justify-content: center;
                 align-items: flex-start;
                 gap: 1rem;
-                padding: 2rem 2rem;
+                padding: 2.4rem 2rem;
             }
         }
     }
-    
 
 
-    .testimony{
-        flex-flow: row wrap-reverse;
+    .testimony {
         justify-content: center;
         align-items: center;
         text-align: center;
         gap: 2rem;
-        img, div{
-            flex: 0 1 100%;
+        width: 100%;
+        img,div{
+            flex:none;
+            width: 48%;
         }
         img{
-            height: 300px;
-            object-fit: cover;
-            object-position: center 40%;
-        }
-        div{
-            align-items: center;
-            gap: 2rem;
-            max-width: 550px;
+            content: url('../Assets/shared/desktop/image-best-gear.jpg');
         }
     }
-    
 }
 
 
 
+// /* Large devices (laptops/desktops, 992px and up) */
+// @media only screen and (min-width: 992px) {}
 
-@media only screen 
-and (min-width: 600px) 
-and (max-width: 1180px)
-and (orientation: landscape) {
-    .hero, 
-    .catalogNav,
-    .products,
-    .testimony{
-    padding-left:7rem;
-    padding-right:7rem;
-    }
-}
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {}
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {}
+// /* Extra large devices (large laptops and desktops, 1200px and up) */
+// @media only screen and (min-width: 1200px) {}
