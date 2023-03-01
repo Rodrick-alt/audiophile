@@ -60,8 +60,8 @@ function CheckOut() {
     for (let i = 0; i < currentArr.length; i++) {
       total += (currentArr[i][2] * currentArr[i][1]);
       vat = parseInt(total * .20);
-      grandTotal += (total + vat + 50);
     }
+    grandTotal += (total + vat + 50);
     return [total, vat, grandTotal];
   }
 
